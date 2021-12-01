@@ -1,0 +1,90 @@
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth">
+            <div class="row flex-grow">
+                <div class="col-lg-6 mx-auto">
+                    <div class="auth-form-light text-left p-5">
+                        <div class="brand-logo">
+                            <img src="assets/images/logo.svg">
+                        </div>
+                        <h4>New here?</h4>
+                        <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+                        <form class="pt-3" name="myForm" [formGroup]="myForm">
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label>Prénom<span style="color:red"> *</span></label>
+                                    <input type="text" class="form-control" placeholder="Prénom" id="firstName"
+                                        #firstName name="firstName" formControlName="firstName"
+                                        [ngClass]="{'is-invalid':myForm.controls['firstName'].touched && myForm.controls['firstName'].invalid,
+                                        'is-valid':myForm.controls['firstName'].touched && myForm.controls['firstName'].valid}">
+                                    <div class="invalid-feedback">
+                                        <div>Entrez votre prénom</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>Nom <span style="color:red"> *</span></label>
+                                    <input type="text" class="form-control" placeholder="Nom" id="lastName" #lastName
+                                         name="lastName" formControlName="lastName"
+                                        [ngClass]="{'is-invalid':myForm.controls['lastName'].touched && myForm.controls['lastName'].invalid,
+                                        'is-valid':myForm.controls['lastName'].touched && myForm.controls['lastName'].valid}">
+                                    <div class="invalid-feedback">
+                                        <div>Entrez votre nom</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <label>Email <span style="color:red"> *</span></label>
+                                <div class="col-md-12 mb-3">
+                                    <input type="email" class="form-control" placeholder="Email" #email
+                                        required="" id="email" formControlName="email" [ngClass]="{'is-invalid':myForm.controls['email'].touched && myForm.controls['email'].invalid,
+                                    'is-valid':myForm.controls['email'].touched && myForm.controls['email'].valid}">
+                                </div>
+                                <label>User name <span style="color:red"> *</span></label>
+                                <div class="col-md-12 mb-3">
+                                    <input type="text" class="form-control" placeholder="Username"
+                                        #username name="username" required="" id="username" formControlName="username" [ngClass]="{'is-invalid':myForm.controls['username'].touched && myForm.controls['username'].invalid,
+                                    'is-valid':myForm.controls['username'].touched && myForm.controls['username'].valid}">
+                                    <div class="invalid-feedback">
+                                        <div>Entrez votre username</div>
+                                    </div>
+                                </div>
+                                <label>Password <span style="color:red"> *</span></label>
+                                <div class="col-md-12 mb-3">
+                                    <input type="password" class="form-control form-control-lg"
+                                        id="exampleInputPassword1" placeholder="Password" #password required=""
+                                        id="password" formControlName="password"
+                                        [ngClass]="{'is-invalid':myForm.controls['password'].touched && myForm.controls['password'].invalid,
+                                    'is-valid':myForm.controls['password'].touched && myForm.controls['password'].valid}">
+                                    <div *ngIf="myForm.controls['password'].touched && myForm.controls['password'].invalid"
+                                        class="invalid-feedback">
+                                        <div *ngIf="myForm.controls['password'].errors?.required">Entrez
+                                            votre mot de passe</div>
+                                        <div *ngIf="myForm.controls['password'].hasError('minlength')">Tappez le
+                                            mot de passe (6 caractères) </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                                <!-- <div class="mb-4">
+                                <div class="form-check">
+                                    <label class="form-check-label text-muted">
+                                        <input type="checkbox" class="form-check-input"> I agree to all Terms &
+                                        Conditions </label>
+                                </div>-->
+                            
+                            <div class="mt-3">
+                                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
+                                (click)="registerAdmin(firstName,lastName, email,username,password)">SIGN UP</a>
+                            </div>
+                            <div class="text-center mt-4 font-weight-light"> Already have an account? <a
+                                    href="login.html" class="text-primary">Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
