@@ -10,6 +10,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddUserComponent } from './pages/espace-client/add-user/add-user.component';
 import { ListUsersComponent } from './pages/espace-client/list-users/list-users.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ListUsersComponent } from './pages/espace-client/list-users/list-users.
     DashboardComponent,
     RegisterComponent,
     AddUserComponent,
-    ListUsersComponent
+    ListUsersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

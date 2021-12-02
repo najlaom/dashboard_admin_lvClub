@@ -33,14 +33,16 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <label>Email <span style="color:red"> *</span></label>
+                                
                                 <div class="col-md-12 mb-3">
+                                    <label>Email <span style="color:red"> *</span></label>
                                     <input type="email" class="form-control" placeholder="Email" #email
                                         required="" id="email" formControlName="email" [ngClass]="{'is-invalid':myForm.controls['email'].touched && myForm.controls['email'].invalid,
                                     'is-valid':myForm.controls['email'].touched && myForm.controls['email'].valid}">
                                 </div>
-                                <label>User name <span style="color:red"> *</span></label>
+                                
                                 <div class="col-md-12 mb-3">
+                                    <label>User name <span style="color:red"> *</span></label>
                                     <input type="text" class="form-control" placeholder="Username"
                                         #username name="username" required="" id="username" formControlName="username" [ngClass]="{'is-invalid':myForm.controls['username'].touched && myForm.controls['username'].invalid,
                                     'is-valid':myForm.controls['username'].touched && myForm.controls['username'].valid}">
@@ -48,8 +50,9 @@
                                         <div>Entrez votre username</div>
                                     </div>
                                 </div>
-                                <label>Password <span style="color:red"> *</span></label>
+                               
                                 <div class="col-md-12 mb-3">
+                                    <label>Password <span style="color:red"> *</span></label>
                                     <input type="password" class="form-control form-control-lg"
                                         id="exampleInputPassword1" placeholder="Password" #password required=""
                                         id="password" formControlName="password"

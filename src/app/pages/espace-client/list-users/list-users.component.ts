@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/espace-client/user.service';
 
 @Component({
   selector: 'app-list-users',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-users.component.css']
 })
 export class ListUsersComponent implements OnInit {
+  listUsers: any = []
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(){
+    await this.getUsers();
+  }
+
+  getUsers() {
+    
+    this.userService.getUsers().then(
+      (data: any) => {
+        this.listUsers = data;
+        console.log("datacccccccccc")
+        console.log(data)
+        
+      }
+    )
   }
 
 }

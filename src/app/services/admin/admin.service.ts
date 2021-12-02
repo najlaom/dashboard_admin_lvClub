@@ -20,4 +20,17 @@ export class AdminService {
         "password": password,
       });
   }
+
+  login(email: any, password: any) {
+    return this.http.post(environment.apiLoginAdmin,
+      {
+        "email": email,
+        "password": password
+      });
+  }
+  logout(admin :any) {
+    return this.http.post(environment.apiLogoutAdmin,
+      admin);
+  }
+
 }

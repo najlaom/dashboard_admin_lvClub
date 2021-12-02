@@ -6,6 +6,13 @@ const apiUrl = "http://localhost:3000/"
 export const environment = {
   production: false,
   apiRegisterAdmin: apiUrl+"api/admin/signup",
+  apiLoginAdmin: apiUrl+ "api/admin/signin",
+  apiLogoutAdmin: apiUrl+"api/admin/signout",
+  apiRegisterUser: apiUrl+"api/admin/addUser",
+  apiListUsers: apiUrl+"api/admin/users",
+  
+  
+  
 };
 
 /*

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdminService } from '../services/admin/admin.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,8 +13,10 @@ export class SidebarComponent implements OnInit {
   firsname: any = '';
   lastname: any = '';
   idUser: any = '';
+  token: any = '';
   role: any ='';
-  constructor() { }
+  constructor(private adminService: AdminService,
+    private _router: Router) { }
 
   ngOnInit(): void {
     console.log(localStorage.getItem('email'));
@@ -23,10 +27,22 @@ export class SidebarComponent implements OnInit {
     console.log(localStorage.getItem('firstName'));
     this.lastname = localStorage.getItem('lastName');
     console.log(localStorage.getItem('lastName'));
-    this.idUser = localStorage.getItem('id');
-    console.log(localStorage.getItem('id'));
+    this.idUser = localStorage.getItem('_id');
+    console.log(localStorage.getItem('_id'));
     this.role = localStorage.getItem('role');
     console.log(localStorage.getItem('role'));
+  }
+  // logouggt(){
+  //   this.token = localStorage.removeItem('token');
+  //   this.adminService.logout(this.token).subscribe(
+  //     () => {
+  //       console.log(this.token)
+  //     }
+  //   )
+  // }
+  logout(){
+    localStorage.removeItem('token');
+    this._router.navigate(['/login']);
   }
 
 }
